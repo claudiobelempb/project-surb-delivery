@@ -1,0 +1,173 @@
+:root {
+  --red-500: #a74b4b;
+  --red-300: #da5c5c;
+  --dark-500: #263238;
+  --gray-500: #9E9E9E;
+  --white: #F5F5F5;
+  --light: #FFFFFF;
+  --green-500: #008E5B;
+}
+
+:focus {
+  outline: transparent;
+  box-shadow: 0 0 0 2px var(--green-500);
+}
+
+button[type="submit"]:not(:disabled):hover {
+  background-color: var(--green-300);
+}
+
+button[type="submit"]:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+  background-color: var(--white);
+  color: var(--dark-500);
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+.active {
+  color: var(--green-500);
+}
+
+ul {
+  list-style-type: none;
+}
+
+main {
+  flex: 1 1;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  /* flex-direction: column; */
+  width: 90%;
+  margin: 0 auto;
+}
+
+.box {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding-block: 1rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 250px;
+  padding: 0;
+  text-align: center;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.box__small  {
+  flex: 1 1 12rem;
+  width: 14.75%;
+  max-width: 12rem;
+}
+
+.box__medium  {
+  flex: 1 1 12rem;
+  width: 100%;
+  min-width: 12rem;
+}
+
+.box__large  {
+  flex: 1 1 12rem;
+  width: 50%;
+  max-width: 12rem;
+}
+
+.box__full  {
+  width: 100%;
+}
+
+.flex__direction_row {
+  flex-direction: row;
+}
+
+.flex__direction_column {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify__content_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.justify__content_start {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  
+}
+
+.justify__content_end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.btn__red_small {
+  border: none;
+  background-color: var(--red-500);
+  font-size: 1rem;
+  padding: .31rem;
+  color: var(--white);
+  font-weight: 700;
+  border-radius: .5rem;
+  line-height: 2rem;
+  letter-spacing: -1.5px;
+  padding: 1rem ;
+  max-width: 14rem;
+}
+
+.btn__red_medium {
+  border: none;
+  background-color: var(--red-300);
+  font-size: 1rem;
+  padding: .31rem;
+  color: var(--white);
+  font-weight: 700;
+  border-radius: .5rem;
+  line-height: 2rem;
+  letter-spacing: -1.5px;
+  padding: 1rem ;
+  max-width: 16rem;
+  min-width: 16rem;
+}

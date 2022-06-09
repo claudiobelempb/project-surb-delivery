@@ -1,0 +1,40 @@
+.home__container {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 8rem;
+}
+
+.home__container_title {
+  font-size: 3.4rem;
+  letter-spacing: -1.5px;
+  font-weight: 700;
+  line-height: 3.4rem;
+  max-width: 30rem;
+}
+
+.home__container_p {
+  font-size: 1.5rem;
+  list-style: 2rem;
+  letter-spacing: -1.5px;
+  color: var(--gray-500);
+  max-width: 30rem;
+  padding-block: 2.9rem;
+}
+
+.home__container_button {
+  border: none;
+  background-color: var(--red-500);
+  font-size: 1.5rem;
+  padding: .31rem;
+  color: var(--white);
+  font-weight: 700;
+  border-radius: .5rem;
+  line-height: 2rem;
+  letter-spacing: -1.5px;
+  padding: 1rem ;
+  max-width: 14rem;
+}
+
+.home__container_svg {
+  max-width: 100%;
+}

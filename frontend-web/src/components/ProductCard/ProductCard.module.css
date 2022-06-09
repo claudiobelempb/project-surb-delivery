@@ -1,0 +1,49 @@
+.product__card {
+  background-color: var(--light);
+  border-radius: .5rem;
+  transition: all .5ms;
+}
+
+.product__card_img {
+  max-width: 100%;
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+  border: 1px solid #E6E6E6;
+}
+
+.product__card_title {
+  font-size: 1.4rem;
+  color: var(--red-300);
+}
+
+.product__card_price {
+  font-size: 1.4rem;
+  color: var(--red-300);
+}
+
+.product__card_description {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gray-500);
+  margin-bottom: 1rem;
+}
+
+.product__card_content {
+  text-align: left;
+  padding:1rem;
+}
+
+.product__card_content p {
+  font-size: 1rem;
+  color: var(--gray-500);
+  font-style: normal;
+  
+}
+
+.product__card:hover {
+  outline: transparent;
+  box-shadow: 0 0 0 2px var(--green-500);
+  border: 2px solid var(--green-500);
+  border-radius: .5rem;
+  color: var(--green-500);
+}
