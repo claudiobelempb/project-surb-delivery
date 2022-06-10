@@ -79,40 +79,38 @@ main {
 .box {
   width: 100%;
   position: relative;
-  display: flex;
+  display: grid;
+  /* grid-template-columns: repeat(2, 1fr); */
   justify-content: center;
   gap: 1rem;
   padding-block: 1rem;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
 .card {
-  width: 250px;
+  /* width: 250px;
   padding: 0;
-  text-align: center;
+  text-align: center; */
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
 }
 
-.box__small  {
-  flex: 1 1 12rem;
-  width: 14.75%;
-  max-width: 12rem;
+.box.small  {
+ 
+  grid-template-columns: repeat(6, minmax(auto, 1fr));
+
 }
 
-.box__medium  {
-  flex: 1 1 12rem;
-  width: 100%;
-  min-width: 12rem;
+.box.medium  {
+  grid-template-columns: repeat(3, 1fr);
+  
 }
 
-.box__large  {
-  flex: 1 1 12rem;
-  width: 50%;
-  max-width: 12rem;
+.box.large  {
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.box__full  {
-  width: 100%;
+.box.full  {
+  grid-template-columns: 1fr;
 }
 
 .flex__direction_row {

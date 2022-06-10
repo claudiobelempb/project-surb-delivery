@@ -23,7 +23,7 @@
 
 .home__container_button {
   border: none;
-  background-color: var(--red-500);
+  background-color: var(--red-300);
   font-size: 1.5rem;
   padding: .31rem;
   color: var(--white);

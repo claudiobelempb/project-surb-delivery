@@ -6,28 +6,29 @@ const ProductPage: React.FC = () => {
     <main>
       <div className={`container ${styles.product__container}`}>
         <div className='content'>
-          <div className='box__medium'>
+          <div className='box medium'>
             <h1>SIGA AS ETAPAS</h1>
-          </div>
-          <div className='box__medium justify__content_start flex__direction_column'>
-            <p>
-              <strong>1</strong> Selecione os produtos e localização.
-            </p>
-            <p>
-              <strong>2</strong> Depois clique em “ENVIAR PEDIDO"
-            </p>
-          </div>
-          <div className='box__medium justify__content_end'>
-            <button className='btn__red_medium'>
-              Pedido enviado com sucesso! Nº 5
-            </button>
+            <div className=''>
+              <p>
+                <strong>1</strong> Selecione os produtos e localização.
+              </p>
+              <p>
+                <strong>2</strong> Depois clique em “ENVIAR PEDIDO"
+              </p>
+            </div>
+            <div className='justify__content_end'>
+              <button className='btn__red_medium'>
+                Pedido enviado com sucesso! Nº 5
+              </button>
+            </div>
           </div>
         </div>
       </div>
       <div className='container'>
         <div className='content'>
-          <div className='box'>
+          <div className='box small'>
             <ProducCard StyleValue='active' />
+            <ProducCard />
             <ProducCard />
             <ProducCard />
             <ProducCard />
