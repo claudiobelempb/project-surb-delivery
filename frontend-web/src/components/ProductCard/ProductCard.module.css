@@ -2,6 +2,7 @@
   background-color: var(--light);
   border-radius: .5rem;
   transition: all .5ms;
+  height: 100%;
 }
 
 .product__card_img {

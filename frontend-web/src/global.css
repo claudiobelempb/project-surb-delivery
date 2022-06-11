@@ -1,11 +1,11 @@
 :root {
-  --red-500: #a74b4b;
-  --red-300: #da5c5c;
-  --dark-500: #263238;
-  --gray-500: #9E9E9E;
-  --white: #F5F5F5;
-  --light: #FFFFFF;
-  --green-500: #008E5B;
+  --red-500: hsl(0, 38%, 47%);
+  --red-300: hsl(0, 63%, 61%);
+  --dark-500: hsl(200, 19%, 18%);
+  --gray-500: hsl(0, 0%, 62%);
+  --white: hsl(0, 0%, 96%);
+  --light: hsl(0, 0%, 100%);
+  --green-500: hsl(158, 100%, 28%);
 }
 
 :focus {
@@ -96,7 +96,7 @@ main {
 
 .box.small  {
  
-  grid-template-columns: repeat(6, minmax(auto, 1fr));
+  grid-template-columns: repeat(auto-fill, 15rem);
 
 }
 
