@@ -1,7 +1,5 @@
 import { ProductType } from '../../types/ProductType';
 
-import styles from './ProductCard.module.css';
-
 const ProducCard: React.FC<ProductType> = ({
   name,
   price,
@@ -18,18 +16,12 @@ const ProducCard: React.FC<ProductType> = ({
   };
   return (
     <a href='/'>
-      <div className={`card ${styles.product__card}`}>
-        <img
-          src={imageUri}
-          alt={name}
-          className={`${styles.product__card_img}`}
-        />
-        <div className={`${styles.product__card_content}`}>
-          <h1 className={`${styles.product__card_title}`}>{name}</h1>
-          <h2 className={`${styles.product__card_price}`}>
-            {formatPrice(price)}
-          </h2>
-          <h3 className={`${styles.product__card_description}`}>Descrição</h3>
+      <div className='card'>
+        <img src={imageUri} alt={name} className='card__img' />
+        <div className='card__content'>
+          <h1 className='card__title'>{name}</h1>
+          <h2 className='card__price'>{formatPrice(price)}</h2>
+          <h3 className='card__sub-title'>Descrição</h3>
           <p>{description}</p>
         </div>
       </div>

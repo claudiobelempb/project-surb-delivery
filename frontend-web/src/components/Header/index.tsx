@@ -1,14 +1,12 @@
 import { Link } from 'react-router-dom';
 import { ReactComponent as ImgLogo } from '../../assets/images/Logotipo.svg';
 
-import styles from './styles.module.css';
-
 const Header: React.FC = () => {
   return (
-    <div className={`container ${styles.header__container}`}>
-      <div className={`content`}>
+    <div className='container bg__dark-red '>
+      <div className='content py__1'>
         <Link to={'/'}>
-          <div className={styles.header__container_link}>
+          <div className=''>
             <ImgLogo />
           </div>
         </Link>

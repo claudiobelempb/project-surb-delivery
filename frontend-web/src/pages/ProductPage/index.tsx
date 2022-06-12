@@ -3,7 +3,6 @@ import { LayoutHome } from '../../components/LayoutHome';
 import { ProducCard } from '../../components/ProductCard';
 import { api } from '../../services/api';
 import { ProductType } from '../../types/ProductType';
-import styles from './Product.module.css';
 
 const ProductPage: React.FC = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
@@ -23,20 +22,25 @@ const ProductPage: React.FC = () => {
   return (
     <LayoutHome>
       <main>
-        <div className={`container ${styles.product__container}`}>
-          <div className='content'>
-            <div className='box medium'>
-              <h1>SIGA AS ETAPAS</h1>
+        <div className='container'>
+          <div className='content py__1'>
+            <div className='grid__3 box__row-center'>
+              <h1 className='text__dark-red font__size-small'>
+                SIGA AS <br />
+                ETAPAS
+              </h1>
               <div className=''>
-                <p>
-                  <strong>1</strong> Selecione os produtos e localização.
+                <p className='text__dark-gray'>
+                  <strong className='text__dark-red'>1</strong> Selecione os
+                  produtos e localização.
                 </p>
-                <p>
-                  <strong>2</strong> Depois clique em “ENVIAR PEDIDO"
+                <p className='text__dark-gray'>
+                  <strong className='text__dark-red'>2</strong> Depois clique em
+                  “ENVIAR PEDIDO"
                 </p>
               </div>
-              <div className='justify__content_end'>
-                <button className='btn__red_medium'>
+              <div className='box__row-end'>
+                <button className='btn btn__dark-red'>
                   Pedido enviado com sucesso! Nº 5
                 </button>
               </div>
@@ -44,8 +48,8 @@ const ProductPage: React.FC = () => {
           </div>
         </div>
         <div className='container'>
-          <div className='content'>
-            <div className='box small'>
+          <div className='content py__2'>
+            <div className='grid__4'>
               {products.map(product => (
                 <ProducCard
                   key={product.id}

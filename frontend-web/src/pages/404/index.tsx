@@ -2,22 +2,27 @@ import React from 'react';
 
 import { FaExclamationTriangle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { LayoutHome } from '../../components/LayoutHome';
 
 const NotFoundPage: React.FC = () => {
   return (
-    <>
-      <div className='container'>
+    <LayoutHome>
+      <main className='container'>
         <div className='row'>
           <div className='col d-flex flex-column justify-content-center align-items-center'>
-            <h1>
+            <h1 className='text__dark-red font__size-large'>
               <FaExclamationTriangle /> 404
             </h1>
-            <h4>Sorry, there is nothing here</h4>
-            <Link to={'/'}>Go Back Home</Link>
+            <h4 className='font__size-small text__dark'>
+              Sorry, there is nothing here
+            </h4>
+            <Link className='btn btn__link' to={'/'}>
+              Go Back Home
+            </Link>
           </div>
         </div>
-      </div>
-    </>
+      </main>
+    </LayoutHome>
   );
 };
 
