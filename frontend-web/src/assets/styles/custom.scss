@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+
+$bs-font: 'Open Sans', sans-serif;
+$bs-body-font-family: $bs-font;
+
+
+$blue-60: hsl(221, 100%, 63%);
+$indigo-50: hsl(263, 90%, 51%);
+$purple-50: hsl(261, 51%, 51%);
+$pink-50: hsl(330, 67%, 52%);
+$red-40: hsl(0, 38%, 47%);
+$red-60: hsl(0, 63%, 61%);
+
+$orange-50: hsl(27, 98%, 54%);
+$yellow-50: hsl(45, 100%, 51%);
+$green-20: hsl(158, 100%, 28%);
+$teal-40: hsl(162, 73%, 46%);
+$cyan-50: hsl(190, 90%, 50%);
+
+$white-00: hsl(0, 0%, 100%);
+$gray-90: hsl(210, 17%, 98%);
+$gray-80: hsl(210, 14%, 89%);
+$gray-70: hsl(210, 11%, 71%);
+$gray-60: hsl(0, 0%, 62%);
+$gray-40: hsl(208, 7%, 46%);
+$gray-30: hsl(210, 9%, 31%);
+$gray-20: hsl(210, 10%, 23%);
+$gray-10: hsl(200, 19%, 18%);
+$black-00: hsl(0, 0%, 0%);
+
+$primary: $blue-60;
+$secondary: $gray-40;
+$success: $green-20;
+$info: $cyan-50;
+$warning: $yellow-50;
+$danger: $red-60;
+$light: $gray-90;
+$dark: $gray-10;
+
+$body-bg: $gray-80;
+$body-color: $gray-10;
+
+
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger,
+  'light': $light,
+  'dark': $dark,
+);
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family: $bs-body-font-family !important;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: $body-bg;
+  color: $body-color;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  flex: 1 1;
+}
+
+@import '~bootstrap/scss/bootstrap.scss';

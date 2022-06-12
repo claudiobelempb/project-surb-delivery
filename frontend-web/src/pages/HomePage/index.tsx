@@ -6,23 +6,26 @@ import { ReactComponent as ImgBackground } from '../../assets/images/Imagem.svg'
 const HomePage: React.FC = () => {
   return (
     <LayoutHome>
-      <main className='container'>
-        <div className='content'>
-          <div className='grid__2'>
-            <div className=''>
-              <h2 className='font__size-medium text__dark py__3'>
-                Faça seu pedido que entregamos pra você!!!
-              </h2>
-              <p className='font__size-small text__dark-gray py__1'>
-                Escolha o seu pedido e em poucos minutos levaremoss na sua porta
-              </p>
-              <Link to={'/products'}>
-                <button className='btn btn__dark-red'>FAZER PEDIDO</button>
-              </Link>
-            </div>
-            <div className=''>
-              <ImgBackground className='' />
-            </div>
+      <main className='container d-flex justify-content-center align-items-center'>
+        <div className='row'>
+          <div className='col'>
+            <h2
+              className='text-dark display-4 fw-bold'
+              style={{ maxWidth: '490px' }}
+            >
+              Faça seu pedido que entregamos pra você!!!
+            </h2>
+            <p className='lead text-secondary' style={{ maxWidth: '490px' }}>
+              Escolha o seu pedido e em poucos minutos levaremoss na sua porta
+            </p>
+            <Link to={'/products'}>
+              <button className='btn btn-danger btn-lg text-light fw-bold'>
+                FAZER PEDIDO
+              </button>
+            </Link>
+          </div>
+          <div className='col'>
+            <ImgBackground className='img-fluid' />
           </div>
         </div>
       </main>

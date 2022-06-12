@@ -15,17 +15,23 @@ const ProducCard: React.FC<ProductType> = ({
     return formatter.format(price);
   };
   return (
-    <a href='/'>
-      <div className='card'>
-        <img src={imageUri} alt={name} className='card__img' />
-        <div className='card__content'>
-          <h1 className='card__title'>{name}</h1>
-          <h2 className='card__price'>{formatPrice(price)}</h2>
-          <h3 className='card__sub-title'>Descrição</h3>
-          <p>{description}</p>
-        </div>
+    <div className='col-3 g-3'>
+      <div className='card h-100'>
+        <a className='card-link shadow text-decoration-none h-100' href='/'>
+          <img src={imageUri} alt={name} className='card-img-top' />
+          <div className='card-body'>
+            <h5 className='card-title text-danger fw-bold'>{name}</h5>
+            <h6 className='card-title text-danger fw-bold'>
+              {formatPrice(price)}
+            </h6>
+            <span className='card-subtitle text-secondary fw-bold'>
+              Descrição
+            </span>
+            <p className='card-text text-secondary'>{description}</p>
+          </div>
+        </a>
       </div>
-    </a>
+    </div>
   );
 };
 

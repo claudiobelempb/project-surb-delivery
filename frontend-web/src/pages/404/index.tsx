@@ -10,13 +10,13 @@ const NotFoundPage: React.FC = () => {
       <main className='container'>
         <div className='row'>
           <div className='col d-flex flex-column justify-content-center align-items-center'>
-            <h1 className='text__dark-red font__size-large'>
+            <h1 className='text-danger fw-bold'>
               <FaExclamationTriangle /> 404
             </h1>
             <h4 className='font__size-small text__dark'>
               Sorry, there is nothing here
             </h4>
-            <Link className='btn btn__link' to={'/'}>
+            <Link className='btn btn-danger text-light' to={'/'}>
               Go Back Home
             </Link>
           </div>

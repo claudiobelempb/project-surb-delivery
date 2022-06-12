@@ -3,8 +3,8 @@ import { ReactComponent as ImgLogo } from '../../assets/images/Logotipo.svg';
 
 const Header: React.FC = () => {
   return (
-    <div className='container bg__dark-red '>
-      <div className='content py__1'>
+    <div className='container-fluid bg-danger py-4'>
+      <div className='container'>
         <Link to={'/'}>
           <div className=''>
             <ImgLogo />

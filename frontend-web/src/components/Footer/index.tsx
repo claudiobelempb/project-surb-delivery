@@ -4,26 +4,26 @@ import { ReactComponent as ImgInstagram } from '../../assets/images/Instagram.sv
 
 const Footer: React.FC = () => {
   return (
-    <div className='container bg__dark py__1'>
-      <div className='content'>
+    <div className='container-fluid bg-dark py-1'>
+      <div className='container'>
         <div className='grid box__center'>
-          <p className='text__light'>
+          <p className='text-light text-center'>
             App desenvolvido durante a 2ª ed. do evento Semana DevSuperior
           </p>
-          <nav className='navbar box__center'>
-            <ul>
-              <li>
-                <a href='/'>
+          <nav className='d-flex justify-content-center'>
+            <ul className='nav'>
+              <li className='nav-item'>
+                <a className='nav-link' href='/'>
                   <ImgYoutube />
                 </a>
               </li>
-              <li>
-                <a href='/'>
+              <li className='nav-item'>
+                <a className='nav-link' href='/'>
                   <ImgLinkdin />
                 </a>
               </li>
-              <li>
-                <a href='/'>
+              <li className='nav-item'>
+                <a className='nav-link' href='/'>
                   <ImgInstagram />
                 </a>
               </li>
