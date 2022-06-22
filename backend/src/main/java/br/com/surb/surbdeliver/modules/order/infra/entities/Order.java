@@ -1,7 +1,7 @@
 package br.com.surb.surbdeliver.modules.order.infra.entities;
 
 import br.com.surb.surbdeliver.modules.product.infra.entities.Product;
-import br.com.surb.surbdeliver.shared.enums.OrderStatusEnum;
+import br.com.surb.surbdeliver.shared.enums.OrderStatusEnums;
 
 import javax.persistence.*;
 import java.io.Serial;
@@ -24,7 +24,7 @@ public class Order implements Serializable {
   private Double longitude;
   @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
   private Instant moment;
-  private OrderStatusEnum status;
+  private OrderStatusEnums status;
 //  private Double total;
 
   @ManyToMany
@@ -36,7 +36,7 @@ public class Order implements Serializable {
 
   public Order(){}
 
-  public Order(Long id, String address, Double latitude, Double longitude, Instant moment, OrderStatusEnum status) {
+  public Order(Long id, String address, Double latitude, Double longitude, Instant moment, OrderStatusEnums status) {
     this.id = id;
     this.address = address;
     this.latitude = latitude;
@@ -86,11 +86,11 @@ public class Order implements Serializable {
     this.moment = moment;
   }
 
-  public OrderStatusEnum getStatus() {
+  public OrderStatusEnums getStatus() {
     return status;
   }
 
-  public void setStatus(OrderStatusEnum status) {
+  public void setStatus(OrderStatusEnums status) {
     this.status = status;
   }
 

@@ -6,7 +6,7 @@ import br.com.surb.surbdeliver.modules.order.infra.repositories.OrderRepository;
 import br.com.surb.surbdeliver.modules.product.dto.ProductDTO;
 import br.com.surb.surbdeliver.modules.product.infra.entities.Product;
 import br.com.surb.surbdeliver.modules.product.infra.repositories.ProductRepository;
-import br.com.surb.surbdeliver.shared.enums.OrderStatusEnum;
+import br.com.surb.surbdeliver.shared.enums.OrderStatusEnums;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,7 +25,7 @@ public class OrderCreateService {
   @Transactional
   public OrderDTO execute(OrderDTO orderDTO) {
     Order order = new Order(null, orderDTO.getAddress(), orderDTO.getLatitude(), orderDTO.getLongitude(),
-      Instant.now(), OrderStatusEnum.PENDING);
+      Instant.now(), OrderStatusEnums.PENDING);
     for (ProductDTO p : orderDTO.getProducts()){
       Product product = productRepository.getReferenceById(p.getId());
       order.getProducts().add(product);

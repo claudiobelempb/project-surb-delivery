@@ -3,7 +3,7 @@ package br.com.surb.surbdeliver.modules.order.useCase.OrderStatusDelivered;
 import br.com.surb.surbdeliver.modules.order.dto.OrderDTO;
 import br.com.surb.surbdeliver.modules.order.infra.entities.Order;
 import br.com.surb.surbdeliver.modules.order.infra.repositories.OrderRepository;
-import br.com.surb.surbdeliver.shared.enums.OrderStatusEnum;
+import br.com.surb.surbdeliver.shared.enums.OrderStatusEnums;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,7 +17,7 @@ public class OrderStatusDeliveredService {
   @Transactional
   public OrderDTO execute(Long id){
     Order order = orderRepository.getReferenceById(id);
-    order.setStatus(OrderStatusEnum.DELIVERED);
+    order.setStatus(OrderStatusEnums.DELIVERED);
     orderRepository.save(order);
     return new OrderDTO(order);
   }

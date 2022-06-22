@@ -1,6 +1,7 @@
 package br.com.surb.surbdeliver.shared.enums;
 
-public enum OrderStatusEnum {
+public enum DeliverEnums {
   PENDING,
-  DELIVERED
+  ACCEPTED,
+  REJECTED
 }

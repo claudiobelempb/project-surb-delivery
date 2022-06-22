@@ -2,7 +2,7 @@ package br.com.surb.surbdeliver.modules.order.dto;
 
 import br.com.surb.surbdeliver.modules.order.infra.entities.Order;
 import br.com.surb.surbdeliver.modules.product.dto.ProductDTO;
-import br.com.surb.surbdeliver.shared.enums.OrderStatusEnum;
+import br.com.surb.surbdeliver.shared.enums.OrderStatusEnums;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -21,14 +21,14 @@ public class OrderDTO implements Serializable {
   private Double latitude;
   private Double longitude;
   private Instant moment;
-  private OrderStatusEnum status;
+  private OrderStatusEnums status;
 //  private Double total;
 
   private List<ProductDTO> products = new ArrayList<>();
 
   public OrderDTO(){}
 
-  public OrderDTO(Long id, String address, Double latitude, Double longitude, Instant moment, OrderStatusEnum status) {
+  public OrderDTO(Long id, String address, Double latitude, Double longitude, Instant moment, OrderStatusEnums status) {
     this.id = id;
     this.address = address;
     this.latitude = latitude;
@@ -88,11 +88,11 @@ public class OrderDTO implements Serializable {
     this.moment = moment;
   }
 
-  public OrderStatusEnum getStatus() {
+  public OrderStatusEnums getStatus() {
     return status;
   }
 
-  public void setStatus(OrderStatusEnum status) {
+  public void setStatus(OrderStatusEnums status) {
     this.status = status;
   }
 
