@@ -56,15 +56,15 @@ public class CategoryProductDTO implements Serializable {
     return createdAt;
   }
 
-  public void setCreatedAt(Instant createdAt) {
-    this.createdAt = createdAt;
-  }
-
   public Instant getUpdatedAt() {
     return updatedAt;
   }
 
   public StatusEnums getStatus() {
     return status;
+  }
+
+  public void setStatus(StatusEnums status) {
+    this.status = status;
   }
 }

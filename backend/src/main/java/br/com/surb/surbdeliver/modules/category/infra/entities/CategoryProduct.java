@@ -62,6 +62,10 @@ public class CategoryProduct implements Serializable {
     return status;
   }
 
+  public void setStatus(StatusEnums status) {
+    this.status = status;
+  }
+
   @PrePersist
   public void preCreate(){
     createdAt = Instant.now();
