@@ -1,12 +1,16 @@
 package br.com.surb.surbdeliver.modules.product.dto;
 
+import br.com.surb.surbdeliver.modules.category.dto.CategoryProductDTO;
+import br.com.surb.surbdeliver.modules.category.infra.entities.CategoryProduct;
 import br.com.surb.surbdeliver.modules.product.infra.entities.Product;
 import br.com.surb.surbdeliver.shared.enums.StatusEnums;
 
-import javax.persistence.Column;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 public class ProductDTO implements Serializable {
   @Serial
@@ -16,14 +20,13 @@ public class ProductDTO implements Serializable {
   private String name;
   private Double price;
 
-  @Column(columnDefinition = "TEXT")
   private String description;
   private String imageUri;
-  @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
   private Instant createdAt;
-  @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
   private Instant updatedAt;
   private StatusEnums status;
+
+  private final List<CategoryProductDTO> categories = new ArrayList<>();
 
   public ProductDTO(){}
 
@@ -47,6 +50,11 @@ public class ProductDTO implements Serializable {
     createdAt = product.getCreatedAt();
     updatedAt = product.getUpdatedAt();
     status = product.getStatus();
+  }
+
+  public ProductDTO(Product product, Set<CategoryProduct> categories){
+    this(product);
+    categories.forEach(category -> this.categories.add(new CategoryProductDTO(category)));
   }
 
   public Long getId() {
@@ -103,6 +111,10 @@ public class ProductDTO implements Serializable {
 
   public void setStatus(StatusEnums status) {
     this.status = status;
+  }
+
+  public List<CategoryProductDTO> getCategories() {
+    return categories;
   }
 }
 

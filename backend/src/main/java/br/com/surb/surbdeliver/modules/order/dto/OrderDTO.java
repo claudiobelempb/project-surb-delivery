@@ -1,7 +1,10 @@
 package br.com.surb.surbdeliver.modules.order.dto;
 
+import br.com.surb.surbdeliver.modules.category.dto.CategoryProductDTO;
+import br.com.surb.surbdeliver.modules.category.infra.entities.CategoryProduct;
 import br.com.surb.surbdeliver.modules.order.infra.entities.Order;
 import br.com.surb.surbdeliver.modules.product.dto.ProductDTO;
+import br.com.surb.surbdeliver.modules.product.infra.entities.Product;
 import br.com.surb.surbdeliver.shared.enums.OrderStatusEnums;
 
 import java.io.Serial;
@@ -9,6 +12,7 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class OrderDTO implements Serializable {
@@ -46,6 +50,10 @@ public class OrderDTO implements Serializable {
     moment = order.getMoment();
     status = order.getStatus();
     products = order.getProducts().stream().map(product -> new ProductDTO(product)).collect(Collectors.toList());
+  }
+  public OrderDTO(Order order, Set<Product> products){
+    this(order);
+    products.forEach(product -> this.products.add(new ProductDTO(product)));
   }
 
   public Long getId() {

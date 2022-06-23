@@ -1,4 +1,4 @@
-package br.com.surb.surbdeliver.modules.product.useCase.ProductFindAll;
+package br.com.surb.surbdeliver.modules.product.useCase.ProductFindAllOrderByNameAsc;
 
 import br.com.surb.surbdeliver.modules.product.dto.ProductDTO;
 import br.com.surb.surbdeliver.modules.product.infra.entities.Product;
@@ -11,14 +11,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class ProductFindAllService {
+public class ProductFindAllByOrderByNameAscService {
 
   @Autowired
-  private ProductRepository repository;
+  private ProductRepository productRepository;
 
   @Transactional(readOnly = true)
   public List<ProductDTO> execute(){
-    List<Product> products = repository.findAll();
+    List<Product> products = productRepository.findAllByOrderByNameAsc();
     return products.stream().map(product -> new ProductDTO(product)).collect(Collectors.toList());
   }
 }
