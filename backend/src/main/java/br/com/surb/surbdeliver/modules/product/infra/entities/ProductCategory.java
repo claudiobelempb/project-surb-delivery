@@ -9,50 +9,31 @@ import java.time.Instant;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-import java.util.UUID;
 
 @Entity
-@Table(name = "tb_product")
-public class Product implements Serializable {
+@Table(name = "tb_category_product")
+public class ProductCategory implements Serializable {
+
   @Serial
   private static final long serialVersionUID = 1L;
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  private String code;
   private String name;
-  private Double price;
-  @Column(columnDefinition = "TEXT")
-  private String description;
-  private String imageUri;
-
-
   @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
   private Instant createdAt;
-
   @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
   private Instant updatedAt;
-
   private StatusEnums status;
-  @ManyToMany
-  @JoinTable(
-    name = "tb_product_category",
-    joinColumns = @JoinColumn(name = "product_id"),
-    inverseJoinColumns = @JoinColumn(name = "category_id")
-  )
-  Set<ProductCategory> categories = new HashSet<>();
 
-  public Product(){}
+  @ManyToMany(mappedBy = "categories")
+  private final Set<Product> products = new HashSet<>();
 
-  public Product(Long id, String code, String name, Double price, String description, String imageUri,
-                 Instant createdAt,
-                 Instant updatedAt, StatusEnums status) {
+  public ProductCategory() {}
+
+  public ProductCategory(Long id, String name, Instant createdAt, Instant updatedAt, StatusEnums status) {
     this.id = id;
-    this.code = code;
     this.name = name;
-    this.price = price;
-    this.description = description;
-    this.imageUri = imageUri;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
     this.status = status;
@@ -66,44 +47,12 @@ public class Product implements Serializable {
     this.id = id;
   }
 
-  public String getCode() {
-    return code;
-  }
-
-  public void setCode(String code) {
-    this.code = code;
-  }
-
   public String getName() {
     return name;
   }
 
   public void setName(String name) {
     this.name = name;
-  }
-
-  public Double getPrice() {
-    return price;
-  }
-
-  public void setPrice(Double price) {
-    this.price = price;
-  }
-
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public String getImageUri() {
-    return imageUri;
-  }
-
-  public void setImageUri(String imageUri) {
-    this.imageUri = imageUri;
   }
 
   public Instant getCreatedAt() {
@@ -122,13 +71,12 @@ public class Product implements Serializable {
     this.status = status;
   }
 
-  public Set<ProductCategory> getCategories() {
-    return categories;
+  public Set<Product> getProducts() {
+    return products;
   }
 
   @PrePersist
-  public void prePersist(){
-    code = String.valueOf(UUID.randomUUID());
+  public void preCreate(){
     createdAt = Instant.now();
     status = StatusEnums.ENABLED;
   }
@@ -142,8 +90,8 @@ public class Product implements Serializable {
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
-    Product product = (Product) o;
-    return id.equals(product.id);
+    ProductCategory category = (ProductCategory) o;
+    return id.equals(category.id);
   }
 
   @Override

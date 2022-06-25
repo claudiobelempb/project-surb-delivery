@@ -1,7 +1,6 @@
 package br.com.surb.surbdeliver.modules.product.dto;
 
-import br.com.surb.surbdeliver.modules.category.dto.CategoryProductDTO;
-import br.com.surb.surbdeliver.modules.category.infra.entities.CategoryProduct;
+import br.com.surb.surbdeliver.modules.product.infra.entities.ProductCategory;
 import br.com.surb.surbdeliver.modules.product.infra.entities.Product;
 import br.com.surb.surbdeliver.shared.enums.StatusEnums;
 
@@ -17,6 +16,7 @@ public class ProductDTO implements Serializable {
   private static final long serialVersionUID = 1L;
 
   private Long id;
+  private String code;
   private String name;
   private Double price;
 
@@ -26,13 +26,15 @@ public class ProductDTO implements Serializable {
   private Instant updatedAt;
   private StatusEnums status;
 
-  private final List<CategoryProductDTO> categories = new ArrayList<>();
+  private final List<ProductCategoryDTO> categories = new ArrayList<>();
 
   public ProductDTO(){}
 
-  public ProductDTO(Long id, String name, Double price, String description, String imageUri, Instant createdAt,
+  public ProductDTO(Long id, String code, String name, Double price, String description, String imageUri,
+                    Instant createdAt,
                     Instant updatedAt, StatusEnums status) {
     this.id = id;
+    this.code = code;
     this.name = name;
     this.price = price;
     this.description = description;
@@ -42,19 +44,20 @@ public class ProductDTO implements Serializable {
     this.status = status;
   }
 
-  public ProductDTO(Product product){
-    id = product.getId();
-    name = product.getName();
-    description = product.getDescription();
-    imageUri = product.getImageUri();
-    createdAt = product.getCreatedAt();
-    updatedAt = product.getUpdatedAt();
-    status = product.getStatus();
+  public ProductDTO(Product entity){
+    id = entity.getId();
+    code = entity.getCode();
+    name = entity.getName();
+    description = entity.getDescription();
+    imageUri = entity.getImageUri();
+    createdAt = entity.getCreatedAt();
+    updatedAt = entity.getUpdatedAt();
+    status = entity.getStatus();
   }
 
-  public ProductDTO(Product product, Set<CategoryProduct> categories){
+  public ProductDTO(Product product, Set<ProductCategory> categories){
     this(product);
-    categories.forEach(category -> this.categories.add(new CategoryProductDTO(category)));
+    categories.forEach(category -> this.categories.add(new ProductCategoryDTO(category)));
   }
 
   public Long getId() {
@@ -63,6 +66,14 @@ public class ProductDTO implements Serializable {
 
   public void setId(Long id) {
     this.id = id;
+  }
+
+  public String getCode() {
+    return code;
+  }
+
+  public void setCode(String code) {
+    this.code = code;
   }
 
   public String getName() {
@@ -113,7 +124,7 @@ public class ProductDTO implements Serializable {
     this.status = status;
   }
 
-  public List<CategoryProductDTO> getCategories() {
+  public List<ProductCategoryDTO> getCategories() {
     return categories;
   }
 }

@@ -1,7 +1,5 @@
 package br.com.surb.surbdeliver.modules.order.dto;
 
-import br.com.surb.surbdeliver.modules.category.dto.CategoryProductDTO;
-import br.com.surb.surbdeliver.modules.category.infra.entities.CategoryProduct;
 import br.com.surb.surbdeliver.modules.order.infra.entities.Order;
 import br.com.surb.surbdeliver.modules.product.dto.ProductDTO;
 import br.com.surb.surbdeliver.modules.product.infra.entities.Product;
