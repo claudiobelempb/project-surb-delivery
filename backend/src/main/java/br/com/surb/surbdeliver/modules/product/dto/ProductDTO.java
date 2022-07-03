@@ -1,7 +1,7 @@
 package br.com.surb.surbdeliver.modules.product.dto;
 
-import br.com.surb.surbdeliver.modules.product.infra.entities.ProductCategory;
 import br.com.surb.surbdeliver.modules.product.infra.entities.Product;
+import br.com.surb.surbdeliver.modules.product.infra.entities.ProductCategory;
 import br.com.surb.surbdeliver.shared.enums.StatusEnums;
 
 import java.io.Serial;

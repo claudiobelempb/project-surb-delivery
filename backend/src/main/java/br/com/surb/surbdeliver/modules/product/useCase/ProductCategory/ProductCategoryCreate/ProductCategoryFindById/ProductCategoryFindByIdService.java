@@ -1,4 +1,4 @@
-package br.com.surb.surbdeliver.modules.product.useCase.ProductCategory.ProductCategoryFindById;
+package br.com.surb.surbdeliver.modules.product.useCase.ProductCategory.ProductCategoryCreate.ProductCategoryFindById;
 
 import br.com.surb.surbdeliver.modules.product.dto.ProductCategoryDTO;
 import br.com.surb.surbdeliver.modules.product.infra.entities.ProductCategory;

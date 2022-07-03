@@ -5,6 +5,7 @@ import br.com.surb.surbdeliver.shared.enums.StatusEnums;
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.HashSet;
 import java.util.Objects;
@@ -126,9 +127,11 @@ public class Product implements Serializable {
     return categories;
   }
 
+  private static final String PATTERN_FORMAT = "dd.MM.yyyy";
+
   @PrePersist
   public void prePersist(){
-    code = String.valueOf(UUID.randomUUID());
+    code = UUID.randomUUID().toString();
     createdAt = Instant.now();
     status = StatusEnums.ENABLED;
   }

@@ -1,6 +1,8 @@
 package br.com.surb.surbdeliver.modules.student.infra.entities;
 
+import br.com.surb.surbdeliver.modules.School.infra.entities.School;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -11,6 +13,7 @@ import java.util.UUID;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "tb_student")
 public class Student implements Serializable {
@@ -21,8 +24,11 @@ public class Student implements Serializable {
   @Id
   private String id;
 
+  @Column
   private String name;
+  @Column
   private String email;
+  @Column
   private String password;
 
   @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
@@ -30,6 +36,20 @@ public class Student implements Serializable {
 
   @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
   private Instant createdAt;
+
+  @ManyToOne
+  private School school;
+
+  public Student(String id, String name, String email, String password, Instant birthday, Instant createdAt,
+                 School school) {
+    this.id = id;
+    this.name = name;
+    this.email = email;
+    this.password = password;
+    this.birthday = birthday;
+    this.createdAt = createdAt;
+    this.school = school;
+  }
 
   @PrePersist
   public void prePersist(){
